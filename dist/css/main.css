@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #666666;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.8;
+  margin: 0 auto;
+}
+
+nav {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  line-height: 90px;
+  padding: 15px 50px;
+}
+nav .site-logo {
+  float: left;
+}
+
+ul {
+  display: flex;
+}
+ul li {
+  display: inline-block;
+  list-style: none;
+}
+ul li a {
+  color: inherit;
+  text-decoration: none;
+  color: #000000;
+  padding: 0px 25px;
+}
+ul li a,
+ul li a:hover,
+ul li a:focus,
+ul li a:active {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+ul li a:hover {
+  color: #E55472;
+}
+
+.header__option {
+  float: right;
+  display: flex;
+}
+.header__option a span {
+  text-align: center;
+  line-height: 35px;
+}
+.header__option a span sup {
+  background-color: red;
+  border-radius: 3px;
+}
+.header__option a:last-child {
+  display: flex;
+  padding-bottom: 10px;
+}
+.header__option--link {
+  padding-inline: 1rem;
+  color: #000000;
+  text-decoration: none;
+}
+.header__option h6 {
+  display: flex;
+  text-transform: uppercase;
+  flex-flow: column;
+  line-height: 45px;
+}
+.header__option h6 .cash {
+  color: red;
+}
+
+.principale {
+  padding-inline: 50px;
+}
+.principale .principale__img {
+  position: relative;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.principale .principale__img--description {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  color: #000000;
+}
+.principale .principale__img--description .texte {
+  width: 50%;
+}
+.principale .principale__img--description .texte .imgbtn {
+  color: white;
+  background-color: #E55472;
+  font-size: 20px;
+  border-radius: 15px;
+  border: none;
+  width: 170px;
+  height: 40px;
+}
+.principale .principale__img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 90vh;
+}/*# sourceMappingURL=main.css.map */
