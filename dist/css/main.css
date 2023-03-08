@@ -11,17 +11,20 @@ body {
   font-style: normal;
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
-  line-height: 1.8;
   margin: 0 auto;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+}
+
 nav {
-  width: 100%;
+  width: 88%;
   background-color: white;
   display: flex;
   justify-content: space-between;
-  line-height: 90px;
-  padding: 15px 50px;
+  padding-block: 15px;
 }
 nav .site-logo {
   float: left;
@@ -31,10 +34,11 @@ ul {
   display: flex;
 }
 ul li {
-  display: inline-block;
+  display: flex;
   list-style: none;
 }
 ul li a {
+  margin: auto;
   color: inherit;
   text-decoration: none;
   color: #000000;
@@ -58,15 +62,20 @@ ul li a:hover {
 }
 .header__option a span {
   text-align: center;
-  line-height: 35px;
-}
-.header__option a span sup {
-  background-color: red;
-  border-radius: 3px;
 }
 .header__option a:last-child {
   display: flex;
   padding-bottom: 10px;
+}
+.header__option span.handbag::before {
+  content: "2";
+  background: red;
+  width: 18px;
+  height: 18px;
+  color: white;
+  border-radius: 100%;
+  position: absolute;
+  transform: translate(10px, -6px);
 }
 .header__option--link {
   padding-inline: 1rem;
@@ -77,7 +86,6 @@ ul li a:hover {
   display: flex;
   text-transform: uppercase;
   flex-flow: column;
-  line-height: 45px;
 }
 .header__option h6 .cash {
   color: red;
@@ -102,6 +110,25 @@ ul li a:hover {
 }
 .principale .principale__img--description .texte {
   width: 50%;
+}
+.principale .principale__img--description .texte h2::before {
+  content: " ";
+  width: 100px;
+  height: 2px;
+  display: block;
+  background: #E55472;
+}
+.principale .principale__img--description .texte h2 {
+  display: flex;
+  align-items: center;
+  color: #E55472;
+  font-size: 20px;
+}
+.principale .principale__img--description .texte h1 {
+  font-size: 60px;
+}
+.principale .principale__img--description .texte span {
+  display: flex;
 }
 .principale .principale__img--description .texte .imgbtn {
   color: white;
@@ -134,6 +161,11 @@ ul li a:hover {
 .grid1__grille .grid-item img {
   width: 300px;
   height: 200px;
+  transition: transform 0.5s ease-in-out;
+}
+.grid1__grille .grid-item img:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out;
 }
 
 .produit {
@@ -145,10 +177,16 @@ ul li a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 .produit__img img {
   width: 48%;
   height: 200px;
+  transition: transform 0.5s ease-in-out;
+}
+.produit__img img:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
 }
 .produit__titre {
   color: black;
@@ -321,9 +359,14 @@ ul li a:hover {
   font-family: "Montserrat", sans-serif;
   padding: 40px 20px;
 }
-.pied__photos--photo img {
+.pied__photos img {
   width: 90px;
   height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+.pied__photos img:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
 }
 
 footer {
@@ -336,7 +379,7 @@ footer .row {
   justify-content: space-between;
   background-color: #272829;
   padding-top: 95px;
-  padding-bottom: 65px;
+  padding-bottom: 55px;
   padding-left: 45px;
   padding-right: 45px;
 }
@@ -350,8 +393,25 @@ footer .row .col ul {
   list-style: none;
   padding: 0;
   color: #999999;
+  margin-bottom: 30px;
+  padding-bottom: 50px;
 }
 footer .row .col h4 {
   margin-bottom: 10px;
   color: white;
+}
+footer .row .foot {
+  border-top: 1px solid #686868;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+footer .row .foot p {
+  width: 50%;
+}
+footer .row .foot .reseau {
+  width: 50%;
+}
+footer .row .foot .reseau i {
+  margin-right: 10px;
 }/*# sourceMappingURL=main.css.map */

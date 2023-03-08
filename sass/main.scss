@@ -15,19 +15,22 @@ body {
     font-style: normal;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.8;
+    // line-height: 1.8;
     margin: 0 auto; }
 
     //Partie du header
-
+header{
+    display: flex;
+    justify-content: center;
+}
 nav{
-    width: 100%;
+    width: 88%;
     // height: 90px;
     background-color: white;
     display: flex;
     justify-content: space-between;
-    line-height: 90px;
-    padding: 15px 50px;
+    // line-height: 90px;
+    padding-block: 15px;
     // position: fixed;
     // z-index: 1;
 
@@ -41,10 +44,11 @@ ul{
     display: flex;
 
 li{
-    display: inline-block;
+    display: flex;
     list-style: none;
 
     a {
+        margin: auto;
         color: inherit;
         text-decoration: none;
         color: #000000;
@@ -73,17 +77,25 @@ li{
         span{
             // height: 37.5px;
             text-align: center;
-            line-height: 35px;
-            sup{
-                background-color: red;
-                border-radius: 3px;
-            }
+            // line-height: 35px;
+           
         }
         &:last-child{
             display: flex; 
             padding-bottom: 10px;
 
         }
+    }
+
+    span.handbag::before {
+        content: "2";
+        background: red;
+        width: 18px;
+        height: 18px;
+        color: white;
+        border-radius: 100%;
+        position: absolute;
+        transform: translate(10px, -6px);
     }
 
    
@@ -100,7 +112,7 @@ h6{
     display: flex;
     text-transform: uppercase;
     flex-flow: column;
-    line-height: 45px;
+    // line-height: 45px;
      
     .cash{
         color: red;
@@ -127,6 +139,28 @@ h6{
             color: #000000;
             .texte{
                 width: 50%;
+                h2::before{
+                    content: " ";
+                    width: 100px;
+                    height: 2px;
+                    display: block;  
+                    background: #E55472;                  
+                }
+
+                h2{
+                    display: flex;
+                    align-items: center;
+                    color: #E55472;
+                    font-size: 20px;
+                }
+
+                h1{
+                    font-size: 60px;
+                }
+
+                span{
+                    display: flex;
+                }
                 .imgbtn{
                     color: white;
                     background-color: #E55472;
@@ -168,6 +202,11 @@ h6{
             img{
                 width: 300px;
                 height: 200px;
+                transition: transform 0.5s ease-in-out;
+            &:hover{
+             transform: scale(1.05);
+         transition: transform 0.5s ease-in-out;
+         }
             }
            
         }
@@ -184,10 +223,17 @@ h6{
         display: flex;
         justify-content: space-between;
         align-items: center;
+                    overflow: hidden;
+
 
         img {
             width: 48%;
             height: 200px;
+            transition: transform 0.5s ease-in-out;
+            &:hover{
+             transform: scale(1.1);
+         transition: transform 0.5s ease-in-out;
+         }
           }
     }
      
@@ -395,14 +441,20 @@ h6{
             font-size: 16px;
             font-family: 'Montserrat', sans-serif;
             padding: 40px 20px ;
+
     
           }
-          
-          &--photo img {
+          img {
             width: 90px;
            height: auto;
-           
+           transition: transform 0.3s ease-in-out;
+           &:hover{
+            transform: scale(1.2);
+        transition: transform 0.3s ease-in-out;
+        }
          }
+
+        
       }
            
 }
@@ -418,11 +470,10 @@ footer {
       justify-content: space-between;
       background-color: #272829;
       padding-top: 95px;
-    padding-bottom: 65px;
-    padding-left: 45px;
-    padding-right: 45px;
+      padding-bottom: 55px;
+      padding-left: 45px;
+      padding-right: 45px;
       
-  
       .col {
         width: calc(20% - 20px);
         margin-bottom: 20px;
@@ -433,6 +484,8 @@ footer {
           list-style: none;
           padding: 0;
           color:#999999;
+          margin-bottom: 30px;
+          padding-bottom: 50px;
       }  
 
         h4 {
@@ -440,5 +493,27 @@ footer {
             color:white;
           }
     }
+
+    .foot{
+        border-top: 1px solid #686868;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        p{
+            width: 50%;
+        }
+        
+        .reseau{
+            width: 50%;
+
+            i{
+                margin-right: 10px;
+            }
+        }
+
+    }
+
+    
 }
 }
