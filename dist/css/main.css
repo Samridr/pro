@@ -26,6 +26,9 @@ nav {
   justify-content: space-between;
   padding-block: 15px;
 }
+nav .cache {
+  display: none;
+}
 nav .site-logo {
   float: left;
 }
@@ -187,14 +190,16 @@ ul li a:hover {
 }
 .produit__img {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
   padding-top: 40px;
 }
 .produit__img img {
-  width: 48%;
+  width: 560px;
   height: 200px;
+  padding-bottom: 20px;
   transition: transform 0.5s ease-in-out;
 }
 .produit__img img:hover {
@@ -354,7 +359,7 @@ ul li a:hover {
 }
 .ico__icones {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, 300px);
   grid-gap: 10px;
   justify-content: center;
   align-items: center;
@@ -365,7 +370,6 @@ ul li a:hover {
 }
 .ico__icones--icone {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   color: #666666;
@@ -379,7 +383,7 @@ ul li a:hover {
   padding-left: 10px;
 }
 .ico__icones--icone img {
-  width: 50px;
+  width: 18%;
   height: auto;
 }
 
@@ -389,8 +393,8 @@ ul li a:hover {
 }
 .pied__photos {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 20px;
   justify-content: center;
   align-items: center;
   background-color: #eeeded;
@@ -435,7 +439,7 @@ footer .row {
   padding-right: 45px;
 }
 footer .row .col {
-  width: calc(20% - 20px);
+  width: 240px;
   margin-bottom: 20px;
 }
 footer .row .col ul {
@@ -454,7 +458,7 @@ footer .row .col h4 {
 footer .row .foot {
   border-top: 1px solid #686868;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
 }
 footer .row .foot p {
@@ -465,4 +469,70 @@ footer .row .foot .reseau {
 }
 footer .row .foot .reseau i {
   margin-right: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  header nav .header__menu {
+    display: none;
+  }
+  header nav #check:checked ~ ul {
+    left: 0;
+    z-index: 1;
+  }
+  header nav .checkbutton {
+    display: flex;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    float: right;
+  }
+  header nav #check {
+    display: none;
+  }
+  header nav .cache {
+    display: block;
+    text-decoration: none;
+    box-sizing: border-box;
+    float: right;
+  }
+  header nav .cache ul {
+    list-style: none;
+    float: right;
+    margin-right: 20px;
+    position: fixed;
+    width: 100%;
+    height: 110vh;
+    background-color: pink;
+    top: 100px;
+    left: -110%;
+    text-align: center;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  header nav .cache ul li {
+    display: block;
+    line-height: 100px;
+    margin: 0 5px;
+  }
+  header nav .cache ul li a {
+    color: black;
+    font-size: 35px;
+    text-transform: uppercase;
+  }
+}
+@media screen and (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
+  nav .site-logo {
+    align-items: center;
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
 }/*# sourceMappingURL=main.css.map */

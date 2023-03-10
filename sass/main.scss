@@ -24,15 +24,15 @@ header{
 }
 nav{
     width: 88%;
-    // height: 90px;
     background-color: white;
     display: flex;
     justify-content: space-between;
-    // line-height: 90px;
     padding-block: 15px;
-    // position: fixed;
-    // z-index: 1;
 
+    .cache{
+        display: none;
+    }
+   
     .site-logo {
         float: left;
     }
@@ -236,6 +236,7 @@ h6{
 
     &__img{
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         overflow: hidden;
@@ -243,8 +244,9 @@ h6{
 
 
         img {
-            width: 48%;
+            width: 560px;
             height: 200px;
+            padding-bottom: 20px;
             transition: transform 0.5s ease-in-out;
             &:hover{
              transform: scale(1.1);
@@ -441,7 +443,7 @@ h6{
 
     &__icones {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fill, 300px);
         grid-gap: 10px;
         justify-content: center;
         align-items: center;
@@ -452,7 +454,7 @@ h6{
 
         &--icone {
             display: flex;
-            flex-direction: row;
+            // flex-direction: row;
             justify-content: center;
             align-items: center;
             color: #666666;
@@ -469,7 +471,7 @@ h6{
           }
           
           &--icone img {
-            width: 50px;
+            width: 18%;
            height: auto;
          }
       }
@@ -482,8 +484,8 @@ h6{
     padding-top: 35px;
     &__photos {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fill, 200px);
+        grid-gap: 20px;
         justify-content: center;
         align-items: center;
         background-color: #eeeded;
@@ -491,7 +493,8 @@ h6{
         padding-top: 30px;
         padding-bottom: 30px;
         padding-left: 25px;
-    padding-right: 25px;
+        padding-right: 25px;
+    
 
         &--photo {
             display: flex;
@@ -536,7 +539,7 @@ footer {
       padding-right: 45px;
       
       .col {
-        width: calc(20% - 20px);
+        width: 240px;
         margin-bottom: 20px;
   
         ul {
@@ -558,7 +561,8 @@ footer {
     .foot{
         border-top: 1px solid #686868;
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap;
+        // flex-direction: row;
         width: 100%;
 
         p{
@@ -577,4 +581,87 @@ footer {
 
     
 }
+}
+
+@media screen and (max-width: 1200px) {
+     header{
+        nav{
+            .header__menu{
+                display: none;
+            }
+
+            #check:checked ~ ul{
+                left: 0;
+                z-index: 1;
+            }
+
+            .checkbutton{
+                display: flex;
+                font-size: 40px;
+                color: rgb(0, 0, 0);
+                float: right;
+                // margin-right: 40px;
+             }
+        
+             #check{
+                display: none;
+             }
+
+            .cache {
+                display: block;
+                text-decoration: none;
+                box-sizing: border-box;
+                float: right;
+
+                ul {
+                    list-style: none;
+                    float: right;
+                    margin-right: 20px;
+                    position: fixed;
+                    width: 100%;
+                    height: 110vh;
+                    background-color: pink;
+                    top: 100px;
+                    left: -110%;
+                    text-align: center;
+                    transition: all .5s;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    li {
+                        display: block;
+                        line-height: 100px;
+                        margin: 0 5px;
+
+                        a{
+                            color: black;
+                            font-size: 35px;
+                            text-transform: uppercase;
+                        }
+                    }
+            
+                }
+            }
+        }
+     }
+    
+}
+
+@media screen and (max-width: 768px) {
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+            margin-bottom: 1rem;
+            justify-content: center;
+        .site-logo{
+            align-items: center;
+            margin-bottom: 1rem;
+            justify-content: center;
+        }
+
+       
+    }
 }
