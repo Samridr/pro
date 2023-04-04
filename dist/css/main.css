@@ -178,15 +178,14 @@ ul li a:hover {
   display: flex;
   padding-bottom: 10px;
 }
-.header__option span.handbag::before {
-  content: "2";
+.header__option .cart-count {
   background: red;
   width: 18px;
   height: 18px;
   color: white;
   border-radius: 100%;
   position: absolute;
-  transform: translate(10px, -6px);
+  transform: translate(-6px, -6px);
 }
 .header__option--link {
   padding-inline: 1rem;
@@ -350,6 +349,7 @@ ul li a:hover {
   position: relative;
 }
 .produit .slide .search-icons {
+  cursor: pointer;
   position: absolute;
   bottom: 5px;
   right: 0px;
@@ -424,6 +424,7 @@ ul li a:hover {
   position: relative;
 }
 .topp .slide .search-icons {
+  cursor: pointer;
   position: absolute;
   bottom: 5px;
   right: 0px;

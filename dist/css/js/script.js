@@ -1,4 +1,37 @@
 
+const cartIc = document.querySelector('#cart-icon');
+const cartCount = document.querySelector('.cart-count');
+
+function incrementCartCount(title) {
+    const cartItems = document.getElementsByClassName('cart-content')[0];
+    const cartItemsNames = cartItems.getElementsByClassName('cart-product-title');
+    for (let i = 0; i < cartItemsNames.length; i++) {  
+      if (cartItemsNames[i].innerText == title) {
+        // Le produit est déjà dans le panier, ne pas incrémenter le compteur
+        return;
+      }
+    }
+  
+    // Le produit n'est pas dans le panier, incrémenter le compteur
+    let count = parseInt(cartCount.textContent) + 1;
+    cartCount.textContent = count;
+  }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const addToCartButtons = document.querySelectorAll('.add-cart');
+  addToCartButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      // Récupérer le titre du produit à partir de l'élément parent du bouton
+      const buttons = event.target;
+      const products = buttons.parentElement.parentElement.parentElement;
+      const title = products.getElementsByClassName('product-title')[0].innerText;
+
+
+      // Appeler la fonction incrementCartCount avec le titre du produit
+      incrementCartCount(title);
+    });
+  });
+});
 
 let cartIcon = document.querySelector('#cart-icon');
 let cartText = document.querySelector('#cart-text');
@@ -82,6 +115,7 @@ function removeCartItem(event){
             return;
         }
         }
+        alert('Le produit a été ajouté au panier.');
         const cartBoxContent = `<img src="${productImg}" alt="cart-img" class="cart-img">
         <div class="detail-box">
         <div class="cart-product-title">${title}</div>
@@ -115,5 +149,7 @@ function updateTotal (){
     total = Math.round(total * 100) / 100; 
 
         document.getElementsByClassName('total-price')[0].innerText = '$' + total;
+        // Update the cash element with the total price
+  document.querySelector('.cash').textContent = '$' + total;
     }
 }
