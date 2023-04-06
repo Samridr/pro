@@ -33,6 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
 let cartIcon = document.querySelector('#cart-icon');
 let cartText = document.querySelector('#cart-text');
 let cart = document.querySelector('.cart');
@@ -81,6 +83,11 @@ function removeCartItem(event){
     const buttonclicked = event.target;
     buttonclicked.parentElement.remove();
     updateTotal();
+    // Decrement the number of items displayed in the cart
+    const cartCountElement = document.querySelector('.cart-count');
+    let cartCount = parseInt(cartCountElement.textContent);
+    cartCount--;
+    cartCountElement.textContent = cartCount;
     }
 
     //function quantity 
@@ -133,23 +140,28 @@ cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change'
    
 
 // function total
-function updateTotal (){
+function updateTotal() {
     const cartContent = document.getElementsByClassName('cart-content')[0];
     const cartBoxs = document.getElementsByClassName('cart-box');
     let total = 0;
-    for (let i = 0; i < cartBoxs.length; i++){
-        let cartBox = cartBoxs[i];
-        const priceElement = cartBox.getElementsByClassName('cart-price')[0];
-        const quantityElement = cartBox.getElementsByClassName('cart-quantity')[0];
-        const price = parseFloat(priceElement.innerText.replace('$',''));
-        const quantity = quantityElement.value;
-        total = total + (price * quantity);
-
-    // cent value 
-    total = Math.round(total * 100) / 100; 
+    if (cartBoxs.length === 0) {
+        document.getElementsByClassName('total-price')[0].innerText = '$' + total;
+        document.querySelector('.cash').textContent = '$' + total;
+    } else {
+        for (let i = 0; i < cartBoxs.length; i++) {
+            let cartBox = cartBoxs[i];
+            const priceElement = cartBox.getElementsByClassName('cart-price')[0];
+            const quantityElement = cartBox.getElementsByClassName('cart-quantity')[0];
+            const price = parseFloat(priceElement.innerText.replace('$', ''));
+            const quantity = quantityElement.value;
+            total = total + (price * quantity);
+        }
+        // cent value 
+        total = Math.round(total * 100) / 100;
 
         document.getElementsByClassName('total-price')[0].innerText = '$' + total;
         // Update the cash element with the total price
-  document.querySelector('.cash').textContent = '$' + total;
+        document.querySelector('.cash').textContent = '$' + total;
     }
 }
+
